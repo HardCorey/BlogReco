@@ -37,6 +37,8 @@ public class test {
 		Map<String, Integer> map=new TreeMap<String, Integer>();
 		map.put("str", j);
 		System.out.println(map);
+		System.out.println(map);
+		System.out.println(map);
 
 /*		double[][] d= {{1,2,3,3,5},{3,4,2,2,6},{1,4,2,5,5},{1,1,2,3,3}};
 		double [][] d1= {{1,2},{1,1}};
