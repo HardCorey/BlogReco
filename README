@@ -1,1 +1,1 @@
-This is a simple but extendable blog(or news) recommender system,which based on the combination of both content analysis and users'behaviors. Developers can add their new blog similarity matrixs toenrich the algorithm group in order to get better recommendations.
+This is a simple but extendable blog(or news) recommender system, which based on the combination of both content analysis and users'behaviors. Developers can add their new blog similarity matrixs toenrich the algorithm group in order to get better recommendations.
