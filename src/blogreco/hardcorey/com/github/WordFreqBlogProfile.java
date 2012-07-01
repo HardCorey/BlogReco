@@ -1,16 +1,22 @@
 package blogreco.hardcorey.com.github;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.TreeMap;
-
+import java.util.TreeSet;
+/*
+ * get profile of a blog which is the words and their frequency stored in word_freq
+ * stopwords are stored in file /lib/stopwords
+ */
 public class WordFreqBlogProfile implements BlogProfile{
 
 	private String ID;
 	private TreeMap<String, Double> word_freq;
-	
+	TreeSet<String>  stopWords;
 	public WordFreqBlogProfile() {
 	}
 	
@@ -19,11 +25,13 @@ public class WordFreqBlogProfile implements BlogProfile{
 		this.word_freq=(TreeMap<String, Double>)m;
 		this.ID=ID;
 	}
-	
+/*
+ * extract content of one blog and form Map-style profile containing words and their frequency
+ * @see blogreco.hardcorey.com.github.BlogProfile#setDescr(java.lang.String, java.lang.String)
+ */
 	@Override
 	public void setDescr(String ID, String content) {
 		this.ID=ID;
-		
 		Scanner scan=new Scanner(content);
 		word_freq=new TreeMap<String, Double>();
 		Stemmer stemmer=new Stemmer();
@@ -31,6 +39,7 @@ public class WordFreqBlogProfile implements BlogProfile{
 		char[] ca;
 		String stem;
 		double freq;
+		setStopWords();
 		//scan the blog content and get stem from each word
 		scan.useDelimiter("[^a-zA-Z]+|\\s+");
 		while(scan.hasNext()) {
@@ -56,6 +65,17 @@ public class WordFreqBlogProfile implements BlogProfile{
 			entry.setValue(entry.getValue()/word_sum);
 	}
 	
+	private void setStopWords() {
+		String path=System.getProperty("user.dir");
+		Scanner scan;
+		try {
+			scan = new Scanner(new File(path+"/lib/stopwords"));
+			stopWords=new TreeSet<String>();
+			while (scan.hasNextLine())
+				stopWords.add(scan.next());
+		} catch (FileNotFoundException e) {
+		}
+	}
 	@Override
 	public String getID() {
 		return this.ID;
@@ -67,7 +87,5 @@ public class WordFreqBlogProfile implements BlogProfile{
 	}
 	
 	@Override
-	public void setDescr(String ID,FileInputStream in) {
-		
-	}
+	public void setDescr(String ID,FileInputStream in) {}
 }

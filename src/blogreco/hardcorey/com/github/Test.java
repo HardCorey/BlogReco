@@ -9,36 +9,48 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.math.linear.Array2DRowRealMatrix;
 import org.apache.commons.math.linear.ArrayRealVector;
 
-public class test {
+public class Test {
 
-	
-	public test() {
+	final static private TreeSet<String> set=new TreeSet<String>();
+	public Test() {
+		System.out.println("init");
+		set.add("a");
+		set.add("b");
 	}
 
 	public void add(int s) {
 		s=s+3;
 		System.out.println(s);
 	}
-	
+
 	public void sub(StringBuffer s) {
 		s.append('d');
 		System.out.println(s);
 	}
-	
+
 	public static void main(String[] args) throws IOException {
-		test t=new test();
-		int i=0;
-		t.add(i);
-		System.out.println(i);
-		StringBuffer s=new StringBuffer("abc");
-		t.sub(s);
-		System.out.println(s);
-		
-		
+//		FileInputStream fis =new FileInputStream(new File(System.getProperty("java.class.path")+"/bin/stopwords"));
+/*		String dir=System.getProperty("java.class.path");
+		System.out.println(dir);
+		Pattern p=Pattern.compile("(.+?bin.*?);");
+		Matcher m=p.matcher(dir);
+		String path="";
+		while (m.find()) {
+			path=m.group(1);
+		}
+*/
+
+		System.out.println(set);
+
+		//System.out.println(System.getProperty("java.library.path"));
+//		Scanner scan=new 
 
 /*		double[][] d= {{1,2,3,3,5},{3,4,2,2,6},{1,4,2,5,5},{1,1,2,3,3}};
 		double [][] d1= {{1,2},{1,1}};
@@ -77,8 +89,8 @@ public class test {
 		if(stem.getResultLength()>1)
 		System.out.println(stem.toString());
 */
-		
-		
+
+
 /*		double[] d= {1,2,1,1,2};
 		ArrayRealVector arv=new ArrayRealVector(d);
 		double[] d2= {1,2,2,2,2};
@@ -92,22 +104,3 @@ public class test {
 */	
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

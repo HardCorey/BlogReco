@@ -21,7 +21,7 @@ public class NMFBlogSimGenerator extends DocWordBlogSimGenerator{
 
 	public NMFBlogSimGenerator() {
 		arrayDocWordMtx=docWordMtx.getDocWordMtx();
-		arraySimMtx=simMtx.getSimMtx();
+		arraySimMtx=blogSimMtx.getSimMtx();
 	}
 
 	/*

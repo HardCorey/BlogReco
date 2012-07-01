@@ -15,7 +15,7 @@ public class SVDBlogSimGenerator extends DocWordBlogSimGenerator{
 	
 	public SVDBlogSimGenerator() {
 		arrayDocWordMtx=docWordMtx.getDocWordMtx();
-		arraySimMtx=simMtx.getSimMtx();
+		arraySimMtx=blogSimMtx.getSimMtx();
 	}
 	@Override
 	public void genSimMtx(double[] singValueRatio) {

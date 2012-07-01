@@ -350,7 +350,7 @@ class Stemmer
 
    /** Stem the word placed into the Stemmer buffer through calls to add().
     * Returns true if the stemming process resulted in a word different
-    * from the input.  You can retrieve the result with
+`    * from the input.  You can retrieve the result with
     * getResultLength()/getResultBuffer() or toString().
     */
    public void stem()
