@@ -15,30 +15,30 @@ import org.apache.commons.math.linear.ArrayRealVector;
 
 public class test {
 
-	int i;
 	
 	public test() {
-		i=0;
-		init();
 	}
 
-	private void init() {
-		i++;
+	public void add(int s) {
+		s=s+3;
+		System.out.println(s);
 	}
 	
-	public void out() {
-		System.out.println(i);
+	public void sub(StringBuffer s) {
+		s.append('d');
+		System.out.println(s);
 	}
 	
 	public static void main(String[] args) throws IOException {
-
-		Integer i=new Integer(5);
-		int j=23;
-		Map<String, Integer> map=new TreeMap<String, Integer>();
-		map.put("str", j);
-		System.out.println(map);
-		System.out.println(map);
-		System.out.println(map);
+		test t=new test();
+		int i=0;
+		t.add(i);
+		System.out.println(i);
+		StringBuffer s=new StringBuffer("abc");
+		t.sub(s);
+		System.out.println(s);
+		
+		
 
 /*		double[][] d= {{1,2,3,3,5},{3,4,2,2,6},{1,4,2,5,5},{1,1,2,3,3}};
 		double [][] d1= {{1,2},{1,1}};

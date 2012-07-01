@@ -13,7 +13,7 @@ public class VectorCosBlogSimGenerator extends DocWordBlogSimGenerator{
 
 	public VectorCosBlogSimGenerator() {
 		arrayDocWordMtx=docWordMtx.getDocWordMtx();
-		arraySimMtx=simMtx.getSimMtx();
+		arraySimMtx=blogSimMtx.getSimMtx();
 	}
 	
 /*
@@ -37,4 +37,10 @@ public class VectorCosBlogSimGenerator extends DocWordBlogSimGenerator{
 		}
 		arraySimMtx=arraySimMtx.add((Array2DRowRealMatrix)arraySimMtx.transpose());
 	}
+	
+	@Override
+	public BlogSimMtx getSimMtx() {
+		return blogSimMtx;
+	}
 }
+

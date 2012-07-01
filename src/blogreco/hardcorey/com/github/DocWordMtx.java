@@ -1,5 +1,5 @@
 package blogreco.hardcorey.com.github;
-
+	
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,8 +13,8 @@ public class DocWordMtx {
 
 	private ArrayList<String> blogList;//blogs as rows
 	private ArrayList<String> wordList;//words as colomns
-	private Array2DRowRealMatrix docWordMtx;//a doc-word matrix
-	private LinkedList<Map<String , Double>> tempDocWord;//a Map is word-freq in one blog
+	private Array2DRowRealMatrix docWordMtx;//doc-word matrix
+	private LinkedList<Map<String , Double>> tempDocWord;//one Map is word-freq in one blog
 	
 	
 	public DocWordMtx() {
