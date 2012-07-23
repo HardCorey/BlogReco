@@ -10,12 +10,8 @@ import org.apache.commons.math.linear.SingularValueDecompositionImpl;
  */
 public class SVDBlogSimGenerator extends DocWordBlogSimGenerator{
 
-	private Array2DRowRealMatrix arrayDocWordMtx;
-	private Array2DRowRealMatrix arraySimMtx;
-	
-	public SVDBlogSimGenerator() {
-		arrayDocWordMtx=docWordMtx.getDocWordMtx();
-		arraySimMtx=blogSimMtx.getSimMtx();
+	public SVDBlogSimGenerator(DocWordMtx docWordMtx) {
+		super(docWordMtx);
 	}
 	@Override
 	public void genSimMtx(double[] singValueRatio) {

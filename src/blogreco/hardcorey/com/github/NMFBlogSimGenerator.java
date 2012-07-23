@@ -1,5 +1,6 @@
 package blogreco.hardcorey.com.github;
 
+
 import java.util.Calendar;
 import java.util.Random;
 
@@ -19,9 +20,8 @@ public class NMFBlogSimGenerator extends DocWordBlogSimGenerator{
 	int row;
 	int col;
 
-	public NMFBlogSimGenerator() {
-		arrayDocWordMtx=docWordMtx.getDocWordMtx();
-		arraySimMtx=blogSimMtx.getSimMtx();
+	public NMFBlogSimGenerator(DocWordMtx docWordMtx) {
+			super(docWordMtx);
 	}
 
 	/*

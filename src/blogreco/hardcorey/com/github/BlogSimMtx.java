@@ -1,16 +1,14 @@
 package blogreco.hardcorey.com.github;
 
+
 import java.util.ArrayList;
-
 import org.apache.commons.math.linear.Array2DRowRealMatrix;
-import org.apache.commons.math.linear.ArrayRealVector;
-
-import com.sun.org.apache.regexp.internal.recompile;
 
 public class BlogSimMtx {
 
 //	private Array2DRowRealMatrix arraySimMtx;
 //	private ArrayList<String> blogList;
+
 	private SimMtx simMtx;
 
 	public BlogSimMtx() {

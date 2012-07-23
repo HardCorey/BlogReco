@@ -7,24 +7,23 @@ import org.apache.commons.math.linear.Array2DRowRealMatrix;
  */
 public abstract class DocWordBlogSimGenerator {
 
-	protected DocWordMtx docWordMtx;//a doc-word matrix, blog as row, word as column
-	protected BlogSimMtx blogSimMtx;//the blog similarity matrix
-//	protected Array2DRowRealMatrix simMtx;//blog-blog similarity matrix
+	protected Array2DRowRealMatrix arrayDocWordMtx;
+	protected SimMtx blogSimMtx;//the blog similarity matrix
+	protected Array2DRowRealMatrix arraySimMtx;//blog-blog similarity matrix
+
+	public DocWordBlogSimGenerator(DocWordMtx docWordMtx) {
+		this.arrayDocWordMtx=docWordMtx.getDocWordMtx();
+		this.blogSimMtx=new SimMtx();
+		this.blogSimMtx.setItemList(docWordMtx.getBlogList());
+		int blogSum=docWordMtx.getBlogList().size();
+		this.arraySimMtx=new Array2DRowRealMatrix(blogSum, blogSum);
+		this.blogSimMtx.setSimMtx(arraySimMtx);
+
+	}
 
 	public abstract void genSimMtx(double[] params) ;
 
-	public DocWordBlogSimGenerator() {}
-
-	public DocWordBlogSimGenerator(DocWordMtx docWordMtx) {
-		this.docWordMtx=docWordMtx;
-		this.blogSimMtx=new BlogSimMtx();
-		this.blogSimMtx.setBlogList(docWordMtx.getBlogList());
-		int blogSum=docWordMtx.getBlogList().size();
-		Array2DRowRealMatrix arrayMtx=new Array2DRowRealMatrix(blogSum, blogSum);
-		this.blogSimMtx.setSimMtx(arrayMtx);
-	}
-
-	public BlogSimMtx getSimMtx() {
+	public SimMtx getSimMtx() {
 		return this.blogSimMtx;
 	}
 }

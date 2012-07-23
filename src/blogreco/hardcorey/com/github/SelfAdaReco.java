@@ -142,26 +142,3 @@ public class SelfAdaReco {
 		return simMtxList.get(index);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
